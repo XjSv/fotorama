@@ -625,7 +625,7 @@ jQuery.Fotorama = function ($fotorama, opts) {
               .appendTo($frame);
         }
 
-        dataFrame.caption && $(div(captionClass, div(captionWrapClass, dataFrame.caption))).appendTo($frame);
+        dataFrame.caption && $(div(captionClass, safeDiv(captionWrapClass, dataFrame.caption))).appendTo($frame);
 
         dataFrame.video && $frame
           .addClass(stageFrameVideoClass)
