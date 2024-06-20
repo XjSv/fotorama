@@ -1188,17 +1188,16 @@ jQuery.Fotorama = function ($fotorama, opts) {
   function cancelFullScreen () {
     if (that.fullScreen) {
       that.fullScreen = false;
-
-      if (FULLSCREEN) {
-        fullScreenApi.cancel(fotorama);
+      if (FULLSCREEN && that.fullScreen) {
+      fullScreenApi.cancel(fotorama);
       }
 
       $BODY.removeClass(_fullscreenClass);
       $HTML.removeClass(_fullscreenClass);
 
       $fotorama
-          .removeClass(fullscreenClass)
-          .insertAfter($anchor);
+        .removeClass(fullscreenClass)
+        .insertAfter($anchor);
 
       measures = $.extend({}, measuresStash);
 
